@@ -117,7 +117,7 @@ public class EmprestimoDAO {
 			}
 		}
 	}
-	public List<Emprestimo> consultaLivroAutor (String nomeAutor) throws SQLException{
+	public List<Emprestimo> consultaLivroPorAutor (String nomeAutor) throws SQLException{
 		String sql = "SELECT u.nome as nomeUsuario,l.nome as nomeLivro,e.id FROM emprestimo e, livro l, usuario u where e.dataDeEntrega is null and e.idLivro = l.id and e.idUsuario = u.id and l.autor like '%" + nomeAutor + "%'";
 		try {
 			conexao = DriverManager.getConnection("jdbc:mysql://localhost/biblioteca", "root", "root");

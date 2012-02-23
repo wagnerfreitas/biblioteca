@@ -1,7 +1,7 @@
 /* 
- * - Versão 1.0 - Oficial 
+ * - Versï¿½o 1.0 - Oficial 
  * - Desenvolvedor - Wagner de Sousa
- * - Empresa - Fortes Informática
+ * - Empresa - Fortes Informï¿½tica
  * - Data - 12/05/2011
  */  
 
@@ -22,7 +22,7 @@ public class Programa {
 		try {
 			menu();			
 		} catch (Exception e) {
-			System.out.println("Digite uma opção de menu válida...");
+			System.out.println("Digite uma opÃ§Ã£o de menu vÃ¡lida...");
 			main(args);	
 		}
 	}
@@ -32,14 +32,14 @@ public class Programa {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		while (decisao != 7) {
 			System.out.println("                      O que deseja fazer? ");
-			System.out.println("1 - Adicionar novo livro ou usuário.        2 - Pesquisar usuário.\n3 - Pesquisar livro.                        4 - Emprestar livro.\n5 - Pesquisar empréstimos.                  6 - Devolver livro.\n7 - Sair.");
-			System.out.print("Digite um número para fazer uma ação: ");
+			System.out.println("1 - Adicionar novo livro ou usuÃºrio.        2 - Pesquisar usuÃ¡rio.\n3 - Pesquisar livro.                        4 - Emprestar livro.\n5 - Pesquisar emprï¿½stimos.                  6 - Devolver livro.\n7 - Sair.");
+			System.out.print("Digite um nÃºmero para fazer uma aÃ§Ã£o: ");
 			decisao = Integer.parseInt(in.readLine());
 
 			switch (decisao) {
 			case 1:
 				int adicionar = 0;
-				System.out.println("1 - Adicionar novo livro \n2 - Adicionar novo usuário");
+				System.out.println("1 - Adicionar novo livro \n2 - Adicionar novo usuÃ¡rio");
 				adicionar = Integer.parseInt(in.readLine());
 				if (adicionar == 1) {
 					System.out.print("Digite o nome do livro: ");
@@ -48,9 +48,9 @@ public class Programa {
 					String autor = in.readLine();
 					biblioteca.cadastraLivro(nomeLivro, autor);
 				} else if (adicionar == 2) {
-					System.out.print("Digite o nome do usuário: ");
+					System.out.print("Digite o nome do usuÃ¡rio: ");
 					String nomeUsuario = in.readLine();
-					System.out.print("Digite o email do usuário: ");
+					System.out.print("Digite o email do usuï¿½rio: ");
 					String email = in.readLine();
 					biblioteca.cadastraUsuario(nomeUsuario, email);
 				}
@@ -89,12 +89,12 @@ public class Programa {
 				Livro livro = new Livro();
 				livro.setId(idLivro);
 
-				System.out.print("Digite o ID do usuário: ");
+				System.out.print("Digite o ID do usuï¿½rio: ");
 				Long idUsuario = Long.parseLong(in.readLine());
 				Usuario usuario = new Usuario();
 				usuario.setId(idUsuario);
 
-				System.out.print("Digite a data de empréstimo: ");
+				System.out.print("Digite a data de emprï¿½stimo: ");
 				String data = in.readLine();
 				SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 				Calendar cal = Calendar.getInstance();
@@ -103,7 +103,7 @@ public class Programa {
 				break;
 			case 5:
 				int pesquisarEmprestimo = 0;
-				System.out.println("1 - Pesquisar por usuário\n2 - Pesquisar por livro\n3 - Pequisar por autor do livro");
+				System.out.println("1 - Pesquisar por usuï¿½rio\n2 - Pesquisar por livro\n3 - Pequisar por autor do livro");
 				pesquisarEmprestimo = Integer.parseInt(in.readLine());
 
 				if (pesquisarEmprestimo == 1) {
@@ -131,7 +131,7 @@ public class Programa {
 				break;
 			case 6:
 				long id = 0;
-				System.out.print("Digite o ID do empréstimo: ");
+				System.out.print("Digite o ID do emprï¿½stimo: ");
 				id = Integer.parseInt(in.readLine());
 				
 				System.out.print("Digite a data de entrega: ");

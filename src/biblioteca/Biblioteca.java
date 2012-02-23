@@ -10,9 +10,9 @@ import bibliotecaDAO.LivroDAO;
 import bibliotecaDAO.UsuarioDAO;
 
 public class Biblioteca {
-	LivroDAO livroDAO;
-	EmprestimoDAO emprestimoDAO;
-	UsuarioDAO usuarioDAO;
+	private LivroDAO livroDAO;
+	private EmprestimoDAO emprestimoDAO;
+	private UsuarioDAO usuarioDAO;
 
 	public Biblioteca(){
 		livroDAO = new LivroDAO();
@@ -44,22 +44,22 @@ public class Biblioteca {
 		emprestimo.setDataDeDevolucao(dataDaDevolucao);
 		emprestimoDAO.atualiza(id, dataDaDevolucao);
 	}
-	public List<Usuario> pesquisarUsuarioPorNome(String pesquisaPorNome) throws IOException, SQLException{
+	public List<Usuario> pesquisarUsuarioPorNome(String pesquisaPorNome) throws IOException, SQLException {
 		return usuarioDAO.consultaUsuario(pesquisaPorNome);
 	}
-	public List<Livro> pesquisarLivroPorNome(String pesquisaPorNome) throws IOException, SQLException{
+	public List<Livro> pesquisarLivroPorNome(String pesquisaPorNome) throws IOException, SQLException {
 		return livroDAO.consultaNome(pesquisaPorNome);
 	}
-	public List<Livro> pesquisarLivroPorAutor(String pesquisaPorAutor) throws IOException, SQLException{
+	public List<Livro> pesquisarLivroPorAutor(String pesquisaPorAutor) throws IOException, SQLException {
 		return livroDAO.consultaAutor(pesquisaPorAutor);
 	}
-	public List<Emprestimo> pesquisaEmprestimosPorLivro(String livro) throws SQLException{
+	public List<Emprestimo> pesquisaEmprestimosPorLivro(String livro) throws SQLException {
 		return emprestimoDAO.consultaEmprestimoLivro(livro);
 	}
-	public List<Emprestimo> pesquisaEmprestimosPorUsuario(String usuario) throws SQLException{
+	public List<Emprestimo> pesquisaEmprestimosPorUsuario(String usuario) throws SQLException {
 		return emprestimoDAO.consultaEmprestimoUsuario(usuario);
 	}
-	public List<Emprestimo> pesquisaEmprestimoPorAutor(String autor) throws SQLException{
-		return emprestimoDAO.consultaLivroAutor(autor);
+	public List<Emprestimo> pesquisaEmprestimoPorAutor(String autor) throws SQLException {
+		return emprestimoDAO.consultaLivroPorAutor(autor);
 	}
 }
